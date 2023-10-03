@@ -17,12 +17,12 @@ export default function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/products" component={Products} />
-          <Route path="/reports" component={Reports} />
-          <Route path="/plans" component={Plan} />
-          <Route path="/login" component={LoginForm} />
-          <Route path="/signup" component={SignupForm} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/plans" element={<Plan />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignupForm />} />
         </Routes>
       </Router>
     </div>

@@ -37,7 +37,7 @@ export const SidebarData = [
   },
   {
     title: 'Support',
-    path: '/Menu',
+    path: '/Support',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text',
   },
@@ -48,7 +48,7 @@ export const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Signin',
+    title: 'Signup',
     path: '/signup',
     icon: <FaIcons.FaSignInAlt />,
     cName: 'nav-text',
