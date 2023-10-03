@@ -42,9 +42,15 @@ export const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Login/Signup',
-    path: '/',
-    icon: <IoIcons.IoMdHelpCircle />,
+    title: 'Login',
+    path: '/login',
+    icon: <IoIcons.IoIosLogIn />,
+    cName: 'nav-text',
+  },
+  {
+    title: 'Signin',
+    path: '/signup',
+    icon: <FaIcons.FaSignInAlt />,
     cName: 'nav-text',
   },
 ]

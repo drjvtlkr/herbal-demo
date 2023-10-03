@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const SignupForm = (props) => {
   const [formData, setFormData] = useState({
@@ -7,19 +7,18 @@ const SignupForm = (props) => {
     phoneNumber: '',
     password: '',
     confirmPassword: '',
-  });
+  })
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
+    e.preventDefault()
 
     try {
       const response = await fetch('/your-signup-endpoint', {
@@ -28,20 +27,17 @@ const SignupForm = (props) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
-    
+      })
+
       if (response.ok) {
-        console.log('Registration successful');
+        console.log('Registration successful')
       } else {
-        console.error('Registration failed');
+        console.error('Registration failed')
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
     }
-    
-
-    
-  };
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800">
@@ -49,7 +45,10 @@ const SignupForm = (props) => {
         <h2 className="text-2xl font-semibold mb-4">SignUp Form</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="fullName" className="text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="fullName"
+              className="text-gray-700 dark:text-gray-300"
+            >
               Full Name
             </label>
             <input
@@ -81,7 +80,10 @@ const SignupForm = (props) => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="phoneNumber" className="text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="phoneNumber"
+              className="text-gray-700 dark:text-gray-300"
+            >
               Phone Number
             </label>
             <input
@@ -97,7 +99,10 @@ const SignupForm = (props) => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="password"
+              className="text-gray-700 dark:text-gray-300"
+            >
               Password
             </label>
             <input
@@ -113,7 +118,10 @@ const SignupForm = (props) => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="confirmPassword" className="text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="confirmPassword"
+              className="text-gray-700 dark:text-gray-300"
+            >
               Confirm Password
             </label>
             <input
@@ -149,7 +157,7 @@ const SignupForm = (props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignupForm;
+export default SignupForm

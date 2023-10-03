@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const LoginForm = (props) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-  });
+  })
 
-  const [loginError, setLoginError] = useState(null);
+  const [loginError, setLoginError] = useState(null)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
       const response = await fetch('/your-login-endpoint', {
@@ -26,17 +26,17 @@ const LoginForm = (props) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
+      })
 
       if (response.ok) {
-        alert('Login successful');
+        alert('Login successful')
       } else {
-        setLoginError('Login failed. Please check your credentials.');
+        setLoginError('Login failed. Please check your credentials.')
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
     }
-  };
+  }
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -48,14 +48,17 @@ const LoginForm = (props) => {
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
                   Email Address
                 </label>
                 <input
-                  type="email" 
+                  type="email"
                   name="email"
                   id="email"
-                  value={formData.email} 
+                  value={formData.email}
                   onChange={handleChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder=""
@@ -63,7 +66,10 @@ const LoginForm = (props) => {
                 />
               </div>
               <div>
-                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <label
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
                   Password
                 </label>
                 <input
@@ -78,7 +84,9 @@ const LoginForm = (props) => {
                 />
               </div>
               {loginError && (
-                <div className="text-red-600 dark:text-red-400">{loginError}</div>
+                <div className="text-red-600 dark:text-red-400">
+                  {loginError}
+                </div>
               )}
               <button
                 type="submit"
@@ -87,7 +95,7 @@ const LoginForm = (props) => {
                 Log In
               </button>
               <p className="text-sm font-light c dark:text-gray-400">
-                Don’t have an account yet? 
+                Don’t have an account yet?
                 <span> </span>
                 <button
                   onClick={() => props.onFormSwitch('Signup')}
@@ -101,7 +109,7 @@ const LoginForm = (props) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm
