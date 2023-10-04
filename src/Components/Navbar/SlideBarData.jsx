@@ -53,4 +53,16 @@ export const SidebarData = [
     icon: <FaIcons.FaSignInAlt />,
     cName: 'nav-text',
   },
+  {
+    title: 'Charts',
+    path: '/charts',
+    icon: <IoIcons.IoIosInformation />,
+    cName: 'nav-text',
+  },
+  {
+    title: 'Barchart',
+    path: '/barchart',
+    icon: <IoIcons.IoIosCheckmark />,
+    cName: 'nav-text',
+  },
 ]
