@@ -25,8 +25,8 @@ export default function App() {
           <Route path="/plans" element={<Plan />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
-          <Route path="/reports/charts" component={<Charts />} />
-          <Route path="/reports/barchart" component={<BarChart />} />
+          <Route path="/reports/charts" element={<Charts />} />
+          <Route path="/reports/barchart" element={<BarChart />} />
         </Routes>
       </Router>
     </div>
